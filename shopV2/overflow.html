@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>overflow</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+      /*
+      box내에 box를 포함하는 layout을 만들 때
+      부모box의 border나 padding을 1이상의 값으로 설정하지 않으면
+      자식 box의 margin값에 따라 부모 box의 margin이 같이 설정된다.
+      
+      부모 box에 border나 padding을 설정하지 않으려면
+      자식 box의 overflow:hidden 또는 overflow:auto를 설정해야한다.
+      */
+      div {
+        background-color: yellowgreen;
+        padding: 1px;
+      }
+      div.frame1 {
+        border: 1px solid red;
+      }
+      div.frame2 {
+        overflow: visible;
+      }
+      div.frame3 {
+        overflow: hidden;
+      }
+      div.frame4 {
+        overflow: auto;
+      }
+      div.frame3 {
+        overflow: hidden;
+      }
+      p {
+        margin: 20px;
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="frame1"><p>A</p></div>
+    <div class="frame2"><p>B</p></div>
+    <div class="frame3"><p>C</p></div>
+    <div class="frame4"><p>D</p></div>
+    <div class="frame5"><p>E</p></div>
+  </body>
+</html>
