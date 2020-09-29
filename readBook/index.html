@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Read Book 2020</title>
+    <link href="static/css/index.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+      $(function () {
+        // 화면에 스크롤이 발생하면
+        $(window).scroll(function () {
+          let headerHeight = $("header").height(); // header 태그의 높이값
+          let windowTop = $(window).scrollTop(); // 화면을 세로방향으로 스크롤할 때 윈도우화면의 최상단 좌표값
+
+          if (windowTop > headerHeight) {
+            $("#main-nav").css("position", "fixed");
+            $("#main-nav").css("top", "0");
+          } else {
+            $("#main-nav").css("position", "relative");
+          }
+
+          console.log(headerHeight, windowTop);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>Read Book 2020 (ღ'ᴗ'ღ)</h1>
+      <h5>책 속에 길이 있대! 정말루?.?</h5>
+    </header>
+    <nav id="main-nav">
+      <ul>
+        <li>Read Book</li>
+        <li>Home</li>
+        <li>도서정보</li>
+        <li>독서록</li>
+        <li>네이버검색</li>
+        <li>회원가입</li>
+        <li>로그인</li>
+        <li>마이페이지</li>
+        <li>로그아웃</li>
+      </ul>
+    </nav>
+    <section id="main-section">Body</section>
+    <footer>
+      <address>Copyright &copy; shju0317@naver.com *6v6*</address>
+    </footer>
+  </body>
+</html>
